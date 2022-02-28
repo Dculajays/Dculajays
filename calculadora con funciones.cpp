@@ -1,55 +1,63 @@
 #include <iostream>
-
 using namespace std;
 
-
-    char operacion;
-    int cierremenu = 0;
-    int cierre = 0;
-    int num1 ;
-    int num2 ;
-    int res ;
-
-    void menu(){
-
-        if (operacion == '0'){
-            cierre = 2;
-            cierremenu = 2;
-        }
-        else if (operacion != '+' & operacion != '-' & operacion != '*' & operacion != '/'){
-        cout << "Ingrese una operacion valida" << endl;
-        }
-
-
+int operacion;
+int b;
+int a;
+int nu1,nu2,oper=0,resultado;
+void menu(){
+if ( operacion == 1){
+    cout << " A elegido Suma"<<endl;
+    cout << "ingrese el primer numero"<< endl;
+    cin >> nu1;
+    cout << "ingrese el segundo numero"<<endl ;
+    cin >> nu2;
+    oper= nu1+nu2;
+    cout<< "El resultado de la suma es de "<< oper << endl;
+    }
+    else if (operacion == 2){
+    cout << " A elegido Resta "<< endl;
+    cout << "ingrese el primer numero"<<endl;
+    cin >> nu1;
+    cout << "ingrese el segundo numero"<<endl;
+    cin >> nu2;
+    oper= nu1 - nu2;
+    cout<< "El resultado de la resta es de "<< oper << endl;
 
     }
-int main()
+    else if (operacion == 3){
+    cout << " A elegido Multiplicacion"<<endl;
+    cout << "ingrese el primer numero"<<endl;
+    cin >> nu1;
+    cout << "ingrese el segundo numero"<<endl;
+    cin >> nu2;
+    oper= nu1*nu2;
+    cout<< "El resultado de la multiplicacion es de "<< oper << endl;
+    }
+    else if (operacion == 4){
+    cout << " A elegido Division"<<endl;
+    cout << "ingrese el primer numero"<<endl;
+    cin >> nu1;
+    cout << "ingrese el segundo numero"<<endl;
+    cin >> nu2;
+    oper= nu1/nu2;
+    cout<< "El resultado de la Division es de "<< oper << endl;
+    }
+}
+
+
+int main ()
 {
-    while (cierremenu < 1){
-        cout << "Escoja una operacion (+,-,*,/)" << endl;
-        cout << "Si desea salir ingrese '0'" << endl;
-        cin >> operacion;
-        menu();
-        while (cierre < 1){
-            cout << "Ingrese el primer numero:";
-            cin >> num1;
-            cout << "Ingrese el segundo numero:";
-            cin >> num2;
-            if (operacion=='+')
-                res = num1 + num2;
-            else if (operacion == '-')
-                res = num1 - num2;
-            else if (operacion == '*')
-                res =num1 * num2;
-            else if (operacion == '/')
-                res = num1/num2;
-            cout << "El resultado es " << res << endl;
-            cierre = 2;
+    while (a < 1 ){
+    cout << "Eliga la operacion segun el numero " <<endl;
+    cout << "1. Suma"<<endl;
+    cout << "2. Resta "<<endl;
+    cout << "3. Multiplicacion"<<endl;
+    cout << "4. Division"<<endl;
+    cin >> operacion;
+    menu();
+    a=2;
 
-        }
-        cierre = 0;
     }
-
-
     return 0;
 }
